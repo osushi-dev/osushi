@@ -12,6 +12,12 @@
             </a>
         </div>
         <br>
+        <div class="container" style="text-align:center;">
+            <a class="btn btn-lg btn-primary btn-raised" href="dashboard/">
+                新規アカウント作成
+            </a>
+        </div>
+		 <br>
     </div>
 </div>
 <br>
