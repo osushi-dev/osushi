@@ -22,6 +22,7 @@ $this->Html->css('base',          null, array('inline' => false));
 
 /*  === add js ===  */
 $this->Html->script('jquery.simple-sidebar.min.js', array('inline' => false));
+$this->Html->script('base.js', array('inline' => false));
 
 ?>
 
@@ -44,7 +45,8 @@ $this->Html->script('jquery.simple-sidebar.min.js', array('inline' => false));
     <body>
         <header class="navbar navbar-fixed-top">
             <div class="container">
-                <a href="#" id="toggle-sidebar" class="btn btn-default sidebar-button icon"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span></a>
+                <!-- <a href="#" id="toggle&#45;sidebar" class="sidebar&#45;buttonn"><span class="glyphicon glyphicon&#45;th&#45;list" aria&#45;hidden="true"></span></a> -->
+                <a href="#" id="toggle-sidebar" class=""><i class="fa fa-bars sidebar-button" aria-hidden="true"></i></a>
                 <div class="center">
                     <a class="navbar-brand brand" href="/">OSUSHI</a>
                 </div>
