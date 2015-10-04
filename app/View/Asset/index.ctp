@@ -31,9 +31,9 @@
             <span style="font-size:64pt;"><br></span>
             <h4>あなたの資産総額</h4>
         </div>
-        <div style="width: 100%; height: 220px;">
+        <div>
             <h4>あなたの保有銘柄一覧</h4>
-            <div id="AssetTable"></div>
+            <div id="AssetTable" style="width: 100%; height: 220px;"></div>
         </div>
         </body>
     </div>
