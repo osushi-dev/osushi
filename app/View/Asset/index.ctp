@@ -31,19 +31,15 @@
             };
         var dataAsJson2 = {
             cols:[ 
-                {id:'Asset',label:'保有銘柄',type:'string'}
-               ,{id:'NumberOfStocks',label:'保有数',type:'number'} 
-               ,{id:'CurrentValues',label:'現在値',type:'number'}
-               ,{id:'GainOrLoss',label:'評価損益',type:'number'}
-               ,{id:'ToShareUnit',label:'単元株まで',type:'number'} 
+                {id:'NumberOfHoldings',label:'銘柄数',type:'number'} 
+               ,{id:'TotalAssets',label:'資産総額',type:'number'}
+               ,{id:'UnrealizedGainsTotal',label:'評価損益合計',type:'number'}
             ] 
            ,rows:[
                 {c:[
-                   {v:'サントリー'}
-                  ,{v: 6.3}
-                  ,{v: 659, f:'¥659'}
-                  ,{v: -50}
-                  ,{v: 800, f: '¥800'}
+                   {v: 2}
+                  ,{v: 24230, f:'¥24,230'}
+                  ,{v: +560}
                  ]}
             ]
 
