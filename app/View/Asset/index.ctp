@@ -29,7 +29,7 @@
             ]
 
             };
-        var dataAsJson2 = {
+        var TotalDataAsJson = {
             cols:[ 
                 {id:'NumberOfHoldings',label:'銘柄数',type:'number'} 
                ,{id:'TotalAssets',label:'資産総額',type:'number'}
@@ -48,9 +48,9 @@
         var table = new google.visualization.Table(document.getElementById('AssetTable'));
         table.draw(data, {showRowNumber: true});
 
-        var data2 = new google.visualization.DataTable(dataAsJson2);
-        var table2 = new google.visualization.Table(document.getElementById('AssetTable2'));
-        table2.draw(data2, {showRowNumber: true});
+        var TotalData = new google.visualization.DataTable(TotalDataAsJson);
+        var TotalTable = new google.visualization.Table(document.getElementById('TotalAssetTable'));
+        TotalTable.draw(TotalData, {showRowNumber: true});
 
     }
 </script>
@@ -60,7 +60,7 @@
         <body onresize="table.draw(data, {showRowNumber: true});">
             <span style="font-size:64pt;"><br></span>
             <h4>あなたの資産総額</h4>
-            <div id="AssetTable2"></div>
+            <div id="TotalAssetTable"></div>
             <h4>あなたの保有銘柄一覧</h4>
             <div id="AssetTable" style="width: 100%; height: 600px;"></div>
         </body>
