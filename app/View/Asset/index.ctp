@@ -20,13 +20,13 @@
 
         var table = new google.visualization.Table(document.getElementById('AssetTable'));
 
-        table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+        table.draw(data, {showRowNumber: true});
     }
 </script>
 
 <div class="container">
     <div class="jumbotron">
-        <body onresize="table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});">
+        <body onresize="table.draw(data, {showRowNumber: true});">
         <div>
             <span style="font-size:64pt;"><br></span>
             <h4>あなたの資産総額</h4>
