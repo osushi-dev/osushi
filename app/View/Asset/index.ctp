@@ -29,19 +29,6 @@
                  ]}
             ]
 */
-    function drawTable() {
-
-        /*
-                var data = new google.visualization.DataTable();
-        data.addColumn('date', '購入日時');
-                data.addColumn('number', '金額');
-                data.addColumn('string', '内容');
-                data.addRows([
-                        [new Date(2015, 9, 27), {v: 1000, f: '¥1,000'}, 'ビール' ],
-                        [new Date(2015, 9, 28), {v: 800, f: '¥800'}, 'お菓子']
-                ]);
-                */
-        var dataAsJson = {
             cols:[
                 {id:'date',label:'購入日時',type:'date'},
                 {id:'price',label:'金額',type:'number'},
@@ -49,7 +36,7 @@
             rows:[
                 {c:[{v:new Date(2015, 8, 27)},{v: 1000, f: '¥1,000'},{v:'ビール'}]},
                 {c:[{v:new Date(2015, 8, 28)},{v: 800, f: '¥800'},{v:'お菓子'}]}]
-            };
+
             };
         var data = new google.visualization.DataTable(dataAsJson);
 
