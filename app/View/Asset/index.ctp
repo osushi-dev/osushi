@@ -30,7 +30,8 @@
         <body onresize="table.draw(data, {showRowNumbaer: true});">
             <div>
                 <h4>保有資産評価</h4>
-                
+                <br><br><br><br>
+                <h4>test</h4>
             </div>
             <div id="AssetTable" style="width: 100%; height: 600px;"></div>
         </body>
