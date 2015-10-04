@@ -34,7 +34,7 @@ $this->Html->script('base.js', array('inline' => false));
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <?php echo $this->Html->charset(); ?>
-        <title>OSUSHI |<?php echo $page_title ?></title>
+        <title>OSUSHI | <?php echo $page_title ?></title>
         <?php
             echo $this->Html->meta('icon');
             echo $this->fetch('meta');
@@ -46,7 +46,9 @@ $this->Html->script('base.js', array('inline' => false));
         <header class="navbar navbar-fixed-top">
             <div class="container">
                 <!-- <a href="#" id="toggle&#45;sidebar" class="sidebar&#45;buttonn"><span class="glyphicon glyphicon&#45;th&#45;list" aria&#45;hidden="true"></span></a> -->
-                <a href="#" id="toggle-sidebar" class=""><i class="fa fa-bars sidebar-button" aria-hidden="true"></i></a>
+                <?php if(strcmp(Router::url(), "/") !== 0){?>
+                    <a href="#" id="toggle-sidebar" class=""><i class="fa fa-bars sidebar-button" aria-hidden="true"></i></a>
+                <?php } ?>
                 <div class="center">
                     <a class="navbar-brand brand" href="/">OSUSHI</a>
                 </div>
@@ -66,35 +68,42 @@ $this->Html->script('base.js', array('inline' => false));
             </div>
             <?php echo $this->element('sql_dump'); ?>
         </footer>
+        <?php if(strcmp(Router::url(), "/") !== 0){?>
         <div id="sidebar" style="background-color:gray">
-            <div class="container-fluid" style="background-image: url('http://chatnoir666.com/wp-content/uploads/2015/03/knuttz-ueba-305111.jpg'); background-size:auto;">
+            <div class="container-fluid" style="background-image: url('../img/user-back.jpg'); background-size:auto; background-position:center;">
                 <br>
-                <img src="http://chatnoir666.com/wp-content/uploads/2015/03/knuttz-ueba-305111.jpg" class="img-thumbnail" alt="Cinque Terre" style="width:80px">
+                <img src="../img/user-sazae.jpg" class="img-thumbnail" alt="User-thumbnail" style="width:80px">
                 <br>
-                <h4 style="color:#eee;">thiroyoshi</h4>
-                <h5 style="color:#eee;">thiroyoshi@gmail.com</h5>
+                <h4 style="color:#eee;">サザエ さん</h4>
+                <h5 style="color:#eee;">sazae@gmail.com</h5>
             </div>
             <br>
             <div class="list-group">
                 <a href="#" class="list-group-item close-sidebar">
-                    <h4 class="list-group-item-heading">Tile with a label</h4>
+                    <h4 class="list-group-item-heading"><i class="fa fa-tachometer"></i>トップ画面</h4>
                 </a>
                 <a href="#" class="list-group-item close-sidebar">
-                    <h4 class="list-group-item-heading">Tile with a label</h4>
+                    <h4 class="list-group-item-heading"><i class="fa fa-heart"></i> あなたにオススメ</h4>
+                </a>
+                <a href="#" class="list-group-item close-sidebar">
+                    <h4 class="list-group-item-heading"><i class="fa fa-exclamation"></i> もうすぐ優待！</h4>
+                </a>
+                <a href="#" class="list-group-item close-sidebar">
+                    <h4 class="list-group-item-heading"><i class="fa fa-bar-chart"></i> 保有銘柄一覧</h4>
+                </a>
+                <a href="#" class="list-group-item close-sidebar">
+                    <h4 class="list-group-item-heading"><i class="fa fa-history"></i> 購入履歴</h4>
                 </a>
                 <hr>
                 <a href="#" class="list-group-item close-sidebar">
-                    <h4 class="list-group-item-heading">Tile with a label</h4>
+                    <h4 class="list-group-item-heading"><i class="fa fa-cog"></i> アカウント情報</h4>
                 </a>
                 <a href="#" class="list-group-item close-sidebar">
-                    <h4 class="list-group-item-heading">Tile with a label</h4>
+                    <h4 class="list-group-item-heading"><i class="fa fa-check-square-o"></i> OSUSHIについて</h4>
                 </a>
-                <a href="#" class="list-group-item close-sidebar">
-                    <h4 class="list-group-item-heading">Tile with a label</h4>
-                </a>
-
             </div>
         </div>
+        <?php } ?>
         <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
