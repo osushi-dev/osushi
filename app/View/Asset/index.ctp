@@ -4,13 +4,12 @@
     google.setOnLoadCallback(drawTable);
     function drawTable() {
         var dataAsJson = {
-/*
             cols:[ 
-                {id:'Asset',label:'保有銘柄',type:'string'},
-                {id:'NumberOfStocks',label:'保有数',type:'number'}, 
-                {id:'CurrentValues',label:'現在値',type:'number'}, 
-                {id:'GainOrLoss',label:'評価損益',type:'number'}
-                {id:'ToShareUnit',label:'単元株まで',type:'number'}, 
+                {id:'Asset',label:'保有銘柄',type:'string'}
+               ,{id:'NumberOfStocks',label:'保有数',type:'number'} 
+               ,{id:'CurrentValues',label:'現在値',type:'number'}
+               ,{id:'GainOrLoss',label:'評価損益',type:'number'}
+               ,{id:'ToShareUnit',label:'単元株まで',type:'number'} 
             ] 
            ,rows:[
                 {c:[
@@ -28,14 +27,6 @@
                   ,{v: 800, f: '¥800'}
                  ]}
             ]
-*/
-            cols:[
-                {id:'date',label:'購入日時',type:'date'},
-                {id:'price',label:'金額',type:'number'},
-                {id:'purch',label:'内容',type:'string'}],
-            rows:[
-                {c:[{v:new Date(2015, 8, 27)},{v: 1000, f: '¥1,000'},{v:'ビール'}]},
-                {c:[{v:new Date(2015, 8, 28)},{v: 800, f: '¥800'},{v:'お菓子'}]}]
 
             };
         var data = new google.visualization.DataTable(dataAsJson);
