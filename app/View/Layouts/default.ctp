@@ -57,6 +57,7 @@ $this->Html->script('base.js', array('inline' => false));
             <?php echo $this->Flash->render(); ?>
             <?php echo $this->fetch('content'); ?>
         </div>
+
         <footer>
             <div style="text-align:center">
                 <p class="muted credit">&copy; 2015
@@ -66,6 +67,7 @@ $this->Html->script('base.js', array('inline' => false));
             </div>
             <?php echo $this->element('sql_dump'); ?>
         </footer>
+
         <div id="sidebar" style="background-color:gray">
             <div class="container-fluid" style="background-image: url('http://chatnoir666.com/wp-content/uploads/2015/03/knuttz-ueba-305111.jpg'); background-size:auto;">
                 <br>

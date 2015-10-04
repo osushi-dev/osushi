@@ -1,3 +1,12 @@
+<?php
+/*  === add css ===  */
+$this->Html->css('components/slick', array('inline' => false));
+
+/*  === add js ===  */
+$this->Html->script('slick.min', array('inline' => false));
+$this->Html->script('pages/dashboard', array('inline' => false));
+?>
+
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript">
     google.load("visualization", "1", {
@@ -32,7 +41,13 @@
     }
 </script>
 
-<div class="container">
+<div class="mt-20 container">
+    <div class="carousel">
+        <div>your content</div>
+        <div>your content</div>
+        <div>your content</div>
+    </div>
+
     <div class="jumbotron">
         <h4>あなたがお持ちの株式</h4>
         <hr>
