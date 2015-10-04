@@ -6,9 +6,13 @@
             var url = $("#url_post").val();
 
                 var JSONdata = {
-                    userid: $("#userid").val(),
-                    jancode: $("#jancode").val(),
-                    price: $("#price").val()
+                    NumOfItems: 1,
+                    Items: [{
+                        userid: $("#userid").val(),
+                        jancode: $("#jancode").val(),
+                        price: $("#price").val(),
+                        num: 1
+                    }]
                 };
 
             alert(JSON.stringify(JSONdata));

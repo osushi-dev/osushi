@@ -1,0 +1,49 @@
+/*
+    CREAM:       rgba(244, 238, 213, 1.0)
+    DARK_RED:    rgba(192, 57, 43, 1.0)
+    RED:         rgba(231, 76, 60, 1.0)
+    DARK_ORANGE: rgba(230,126,34, 1.0)
+    ORANGE:      rgba(243,156,18, 1.0)
+*/
+.center {
+    text-align: center;
+}
+.brand {
+    font-family: 'Gochi Hand', cursive;
+}
+
+
+/* ===  navigation bar  === */
+
+.navbar {
+    background-color: rgba(247, 243, 232, 1.0);
+    border-bottom: solid 2px rgba(221, 212, 192, 1.0)
+}
+.navbar-brand {
+    color: rgba(231, 76, 60, 1.0);
+    font-size: 25px;
+}
+.btn-primary {
+    background-color: rgba(231, 76, 60, 1.0);
+    border: solid 1px rgba(255, 255, 255, 0.7);
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+    background-color: rgba(242, 38, 19, 1.0);
+    border: solid 1px rgba(255, 255, 255, 1.0);
+}
+
+
+/* ===  utilities  === */
+.m-5  { margin: 5px;}
+.m-10 { margin: 10px;}
+.m-20 { margin: 20px;}
+.m-30 { margin: 30px;}
+
+.mt-5  { margin-top: 5px;}
+.mt-10 { margin-top: 10px;}
+.mt-20 { margin-top: 20px;}
+.mt-30 { margin-top: 30px;}
