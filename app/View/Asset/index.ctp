@@ -1,6 +1,6 @@
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript">
-	google.load('visualization', '1', {packages:['table']});
+    google.load('visualization', '1', {packages:['table']});
     google.setOnLoadCallback(drawTable);
 
     function drawTable() {
@@ -27,10 +27,12 @@
 
 <div class="container">
     <div class="jumbotron">
-        <h4>あなたの保有資産です。</h4>
         <body onresize="table.draw(data, {showRowNumbaer: true});">
+            <div>
+                <h4>保有資産評価</h4>
+                
+            </div>
             <div id="AssetTable" style="width: 100%; height: 600px;"></div>
         </body>
-        <p>説明だお</p>
     </div>
 </div>
