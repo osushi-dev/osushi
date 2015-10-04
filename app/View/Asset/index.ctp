@@ -29,8 +29,7 @@
     <div class="jumbotron">
         <body onresize="table.draw(data, {showRowNumbaer: true});">
             <div>
-                <h4>保有資産評価</h4>
-                <br><br><br><br>
+                <span style="font-size:360pt;"><br></span>
                 <h4>test</h4>
             </div>
             <div id="AssetTable" style="width: 100%; height: 600px;"></div>
