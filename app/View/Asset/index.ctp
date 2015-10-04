@@ -6,12 +6,16 @@
     function drawTable() {
         var dataAsJson = {
             cols:[ 
-                {id:'Asset',label:'保有株式',type:'string'},
+                {id:'Asset',label:'保有銘柄',type:'string'},
                 {id:'ToShareUnit',label:'単元株まで',type:'number'}, 
-                {id:'GainOrLoss',label:'評価損益',type:'number'}], 
+                {id:'CurrentValues',label:'現在値',type:'number'}, 
+                {id:'NumberOfStocks',label:'保有株数',type:'number'}, 
+                {id:'GainOrLoss',label:'評価損益',type:'number'}
+            ] 
             rows:[
-                {c:[{v:'明治乳業'},{v: 1000, f: '¥1,000'},{v: +200}]},
-                {c:[{v:'サントリー'},{v: 800, f: '¥800'},{v: -50}]}]
+                {c:[{v:'明治乳業'},{v: 1000, f: '¥1,000'},{v: 1428, f:'¥1,428'},{v: 2.6},{v: +200}]},
+                {c:[{v:'サントリー'},{v: 800, f: '¥800'},{v: 659, f:'¥659'},{v: 6.3},{v: -50}]}
+            ]
             };
         var data = new google.visualization.DataTable(dataAsJson);
 
