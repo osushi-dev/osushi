@@ -35,7 +35,9 @@
 <div class="container">
     <div class="jumbotron">
         <h4>あなたの購入履歴です。</h4>
-        <div id="histable" style="width: 100%; height: 600px;"></div>
+        <body onresize="table.draw(data, {showRowNumbaer: true});">
+            <div id="histable" style="width: 100%; height: 600px;"></div>
+        </body>
         <p>説明だお</p>
     </div>
 
