@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="jumbotron">
 		<body>
-			<span style="font-size:64pt;"><br></span>
+			<span style="font-size:36pt;"><br></span>
 			<h2>あなたの資産総額</h2>
 			<table class="table table-striped">
 			<thead>
@@ -10,13 +10,9 @@
 			<th>お気に入り企業数</th>
 			</tr>
 			</thead>
-			<tbody>
-			<tr>
-			<td>86,325</td>
-			<td>7</td>
-			</tr>
-			</tbody>
+			<?php echo $this->Html->tableCells($total_asset) . PHP_EOL; ?>	
 			</table>
+			<span style="font-size:2pt;"><br></span>
 			<h2>お気に入りの会社</h2>
 			<table class="table table-striped">
 			<thead>
@@ -28,15 +24,7 @@
 			<th>前日比</th>
 			</tr>
 			</thead>
-			<tbody>
-			<tr>
-			<td>明治乳業</td>
-			<td>食品</td>
-			<td>7.2</td>
-			<td>410</td>
-			<td>-0.8%</td>
-			</tr>
-			</tbody>
+			<?php echo $this->Html->tableCells($asset_list) . PHP_EOL; ?>	
 			</table>
 		</body>
 	</div>
