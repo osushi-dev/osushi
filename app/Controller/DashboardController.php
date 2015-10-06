@@ -30,39 +30,26 @@ class DashboardController extends AppController {
                 'alias' => 'Asset',
                 'fields' => Array('Issuelist.name','Issuelist.businesstype','Issuelist.compareyd','Issuelist.stockprice','Asset.num')
         ));
-        // $joins = array(
-        //     array(
-        //         'type' => 'inner',
-        //         'table' => 'stocks',
-        //         'alias' => 'Stock',
-        //         'conditions' => array(
-        //                 'Asset.policynum = Stock.policynum'
-        //         ),
-        //     ),
-        // );
-        // $tours = $Asset->find('all',
-        //     array(
-        //         'joins' => $joins,
-        //         'alias' => 'Asset',
-        //         'fields' => Array('Asset.id', 'Asset.policynum', 'Asset.num', 'Stock.name'),
-        //         'conditions' => array(
-        //                 'and' => array(
-        //                         array('Asset.userid' => 1)
-        //                 )
-        //         )
-        //     ));
 
         $series_data = array();
+        $asset_list  = array();
 
         foreach ($assets as &$value) {
+            $_asset_list = array();
+            array_push($_asset_list, $value['Issuelist']['name']);
+            array_push($_asset_list, $value['Asset']['num']);
+            array_push($asset_list,  $_asset_list);
+
             array_push($series_data, array(
                 'name' => $value['Issuelist']['name'],
                 'drilldown' => $value['Issuelist']['name'],
-                'y'    => intval($value['Asset']['num'])
+                'y'    => floatval($value['Asset']['num'])
             ));
         }
 
+        var_dump($series_data);
         $this->set('assets', $assets);
+        $this->set('asset_list', $asset_list);
         $this->set('capital_holdings',
             json_encode(array(
                 'title' => '',
@@ -96,8 +83,8 @@ class DashboardController extends AppController {
                 )),
                 'drilldown' => array(
                     'series' => array(array(
-                        'name' => "Microsoft Internet Explorer",
-                        'id' => "Microsoft Internet Explorer",
+                        'name' => "不二家",
+                        'id' => "不二家",
                         'data' => array(
                             array("v11.0", 24.13),
                             array("v8.0", 17.2),
