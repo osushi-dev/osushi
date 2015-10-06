@@ -59,6 +59,7 @@ $this->Html->script('base.js', array('inline' => false));
             <?php echo $this->Flash->render(); ?>
             <?php echo $this->fetch('content'); ?>
         </div>
+
         <footer>
             <div style="text-align:center">
                 <p class="muted credit">&copy; 2015

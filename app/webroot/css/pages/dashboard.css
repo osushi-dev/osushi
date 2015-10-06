@@ -1,0 +1,40 @@
+.headline {
+    border-top: solid 3px rgba(231, 76, 60, 1.0);
+    color: rgba(231, 76, 60, 1.0);
+    /* background-color: rgba(247, 243, 232, 1.0); */
+    padding: 10px;
+    font-weight: bold;
+    margin: 0px 0px 10px 0px;
+}
+
+.dashboard .row{
+    /* border-left: solid 5px rgba(231, 76, 60, 1.0); */
+    margin-bottom: 10px;
+    background-color: white;
+    border-bottom: solid 2px rgba(221, 212, 192, 1.0);
+}
+
+.recommend-item {
+    margin: 0px 5px;
+    position: relative;
+    height: 120px;
+    background-position: center center;
+    background-size:cover;
+    width:100%;
+}
+
+.recommend-item p{
+    color: white;
+    position: absolute;
+    right: 5px;
+    margin-bottom: 5px;
+}
+.recommend-item-brand {
+    bottom: 30px;
+}
+.recommend-item-name {
+    bottom: 15px;
+}
+.recommend-item-price {
+    bottom: 0px;
+}
