@@ -24,6 +24,7 @@ $this->Html->script('pages/dashboard', array('inline' => false));
         <div class="mb-10 carousel">
             <div class="recommend-item" style="background-image:url('http://hp.knowledge-works.co.jp/wp-content/uploads/2012/06/Fujiya_Milky.jpg')">
                 <div class="overlay"></div>
+                <div class="ribbon"><span>POPULAR</span></div>
                 <p class="recommend-item-brand">不二家</p>
                 <p class="recommend-item-name">ミルキー</p>
                 <p class="recommend-item-price">￥148</p>
@@ -112,9 +113,14 @@ $this->Html->script('pages/dashboard', array('inline' => false));
 
     <div class="row">
         <h4 class="headline">保有銘柄一覧</h4>
-        <div>
+        <div class="col-sm-6">
             <div id="capital_holdings" style="width:100%; height:400px;"></div>
         </div>
-
+        <div class="col-sm-6">
+            <table>
+                <?php echo $this->Html->tableHeaders(array('タイトル', '値段')) . PHP_EOL; ?>
+                <?php echo $this->Html->tableCells($asset_list) . PHP_EOL; ?>
+            </table>
+        </div>
     </div>
 </div>
