@@ -77,6 +77,14 @@ class DashboardController extends AppController {
                 ),
             ),
 						array(
+                'type' => 'inner',
+                'table' => 'assets',
+                'alias' => 'Assets',
+                'conditions' => array(
+                        'Compinfos.policynum = Assets.policynum',
+                ),
+            ),
+						array(
 								'type' => 'inner',
 								'table' => 'items',
 								'alias' => 'Items',
@@ -89,7 +97,7 @@ class DashboardController extends AppController {
             array(
                 'joins' => $joins,
                 'alias' => 'Compinfos',
-                'fields' => Array('Issuelist.name','Issuelist.stockprice','Compinfos.unitshares','Compinfos.flagshipprice','Compinfos.interestrate','Items.name')
+                'fields' => Array('Issuelist.name','Issuelist.stockprice','Compinfos.unitshares','Compinfos.flagshipprice','Compinfos.interestrate','Items.name','Assets.num')
         ));
 
         $this->set('compinfos', $compinfos);

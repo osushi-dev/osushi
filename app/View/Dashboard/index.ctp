@@ -61,53 +61,44 @@ $this->Html->script('pages/dashboard', array('inline' => false));
         <h4 class="headline">もうすぐ優待！</h4>
         <div class="bonus">
             <p>
-                アサヒ飲料: <span class="attention">あと<?php echo $compinfos['0']['Items']['name'] ?> <?php echo ceil(($compinfos['0']['Compinfos']['unitshares'] - 99.5) * $compinfos['0']['Issuelist']['stockprice'] / ($compinfos['0']['Compinfos']['flagshipprice'] * $compinfos['0']['Compinfos']['interestrate'])) ?>ケースで優待！</span>
+                <?php echo $compinfos['0']['Issuelist']['name'] ?><br>
+								<span class="attention">あと<?php echo $compinfos['0']['Items']['name'] ?> <?php echo ceil((1.0 - $compinfos['0']['Assets']['num']) * $compinfos['0']['Issuelist']['stockprice'] / ($compinfos['0']['Compinfos']['flagshipprice'] * $compinfos['0']['Compinfos']['interestrate'])) ?>ケースで1株</span>
             </p>
             <div class="bonus-meter">
-                <i class="fa fa-beer active"></i>
-                <i class="fa fa-beer active"></i>
-                <i class="fa fa-beer active"></i>
-                <i class="fa fa-beer active"></i>
-                <i class="fa fa-beer active"></i>
-                <i class="fa fa-beer active"></i>
-                <i class="fa fa-beer active"></i>
-                <i class="fa fa-beer"></i>
-                <i class="fa fa-beer"></i>
-                <i class="fa fa-beer"></i>
+						<?php for($i=1; $i<=10; $i++) { ?>
+                <i class="fa fa-beer <?php if( $i <= intval($compinfos['0']['Assets']['num'] * 10) ) echo 'active'; ?>"></i>
+						<?php 
+							if( $i==5 ) echo '<br>';
+							}
+						?>
             </div>
         </div>
         <div class="bonus">
             <p>
-                アサヒ飲料: <span class="attention">あとアサヒスーパードライ3ケースで優待！</span>
+                <?php echo $compinfos['0']['Issuelist']['name'] ?><br>
+								<span class="attention">あと<?php echo $compinfos['0']['Items']['name'] ?> <?php echo ceil((1.0 - $compinfos['0']['Assets']['num']) * $compinfos['0']['Issuelist']['stockprice'] / ($compinfos['0']['Compinfos']['flagshipprice'] * $compinfos['0']['Compinfos']['interestrate'])) ?>ケースで1株</span>
             </p>
             <div class="bonus-meter">
-                <i class="fa fa-beer active"></i>
-                <i class="fa fa-beer active"></i>
-                <i class="fa fa-beer active"></i>
-                <i class="fa fa-beer active"></i>
-                <i class="fa fa-beer active"></i>
-                <i class="fa fa-beer active"></i>
-                <i class="fa fa-beer active"></i>
-                <i class="fa fa-beer"></i>
-                <i class="fa fa-beer"></i>
-                <i class="fa fa-beer"></i>
+						<?php for($i=1; $i<=10; $i++) { ?>
+                <i class="fa fa-beer <?php if( $i <= intval($compinfos['0']['Assets']['num'] * 10) ) echo 'active'; ?>"></i>
+						<?php 
+							if( $i==5 ) echo '<br>';
+							}
+						?>
             </div>
         </div>
         <div class="bonus">
             <p>
-                アサヒ飲料: <span class="attention">あとアサヒスーパードライ4ケースで優待！</span>
+                <?php echo $compinfos['0']['Issuelist']['name'] ?><br>
+								<span class="attention">あと<?php echo $compinfos['0']['Items']['name'] ?> <?php echo ceil((1.0 - $compinfos['0']['Assets']['num']) * $compinfos['0']['Issuelist']['stockprice'] / ($compinfos['0']['Compinfos']['flagshipprice'] * $compinfos['0']['Compinfos']['interestrate'])) ?>ケースで1株</span>
             </p>
             <div class="bonus-meter">
-                <i class="fa fa-beer active"></i>
-                <i class="fa fa-beer active"></i>
-                <i class="fa fa-beer active"></i>
-                <i class="fa fa-beer active"></i>
-                <i class="fa fa-beer active"></i>
-                <i class="fa fa-beer active"></i>
-                <i class="fa fa-beer"></i>
-                <i class="fa fa-beer"></i>
-                <i class="fa fa-beer"></i>
-                <i class="fa fa-beer"></i>
+						<?php for($i=1; $i<=10; $i++) { ?>
+                <i class="fa fa-beer <?php if( $i <= intval($compinfos['0']['Assets']['num'] * 10) ) echo 'active'; ?>"></i>
+						<?php 
+							if( $i==5 ) echo '<br>';
+							}
+						?>
             </div>
         </div>
     </div>
