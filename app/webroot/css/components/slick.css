@@ -117,3 +117,44 @@
 .slick-arrow.slick-hidden {
     display: none;
 }
+@charset 'UTF-8';
+/* Slider */
+.slick-loading .slick-list
+{
+    /* background: #fff url('./ajax-loader.gif') center center no-repeat; */
+}
+.slick-prev, .slick-next {
+    color: white;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 53px 3px;
+    z-index: 1;
+    /* float: left; */
+}
+.slick-next {
+    top: 0px;
+    right: 0px;
+}
+.slick-list {
+    height:120px;
+}
+.slick-dots {
+    float: left;
+    padding: 0;
+    left: 50%;
+    position: relative;
+    list-style: none outside none;
+    user-select: none;
+}
+.slick-dots li {
+    font-family: FontAwesome;
+    content: "\f105";
+    position: relative;
+    float: left;
+    left: -50%;
+}
+.slick-dots button {
+    border: none;
+    background-color: white;
+    user-select: none;
+}
