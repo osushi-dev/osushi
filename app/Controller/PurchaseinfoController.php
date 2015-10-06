@@ -26,10 +26,10 @@ class PurchaseinfoController extends AppController {
             ),
             array(
                 'type' => 'inner',
-                'table' => 'stocks',
-                'alias' => 'Stock',
+                'table' => 'issuelist',
+                'alias' => 'Issuelist',
                 'conditions' => array(
-                        'Item.policynum = Stock.policynum'
+                        'Item.policynum = Issuelist.policynum'
                 ),
             )
         );
@@ -37,9 +37,8 @@ class PurchaseinfoController extends AppController {
             array(
                 'joins' => $joins,
                 'alias' => 'Purchaseinfo',
-                'fields' => Array('Purchaseinfo.id', 'Purchaseinfo.jancode', 'Purchaseinfo.price', 'Purchaseinfo.num', 'Purchaseinfo.date', 'Stock.name','Item.name'),
+                'fields' => Array('Purchaseinfo.id', 'Purchaseinfo.jancode', 'Purchaseinfo.price', 'Purchaseinfo.num', 'Purchaseinfo.date', 'Issuelist.name','Item.name'),
         ));
-
 
         $this->set('purchaseinfos',$purchaseinfos);
     }
