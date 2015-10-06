@@ -1,0 +1,10 @@
+.share-label{
+    font-size: 15px;
+}
+.share-num{
+    color: orange;
+    text-shadow: 1px 1px 1px gray;
+}
+td{
+    font-weight: bold;
+}

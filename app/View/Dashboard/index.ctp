@@ -18,12 +18,13 @@ $this->Html->script('pages/dashboard', array('inline' => false));
     });
 </script>
 
-<div class="mt-20 container dashboard">
+<div class="mt-20 container main-component">
     <div class="row">
         <h4 class="headline">あなたにオススメ！</h4>
         <div class="mb-10 carousel">
             <div class="recommend-item" style="background-image:url('http://hp.knowledge-works.co.jp/wp-content/uploads/2012/06/Fujiya_Milky.jpg')">
                 <div class="overlay"></div>
+                <div class="ribbon ribbon-red"><span>カイドキ！</span></div>
                 <p class="recommend-item-brand">不二家</p>
                 <p class="recommend-item-name">ミルキー</p>
                 <p class="recommend-item-price">￥148</p>
@@ -36,6 +37,7 @@ $this->Html->script('pages/dashboard', array('inline' => false));
             </div>
             <div class="recommend-item" style="background-image:url('https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcToga8O-LF_M9Rg2ttr9aWL7_7q_aEUdKqHoukCp4Cz7RTXg2k-jg')">
                 <div class="overlay"></div>
+                <div class="ribbon ribbon-orange"><span>オススメ！</span></div>
                 <p class="recommend-item-brand">日清食品</p>
                 <p class="recommend-item-name">ラ王</p>
                 <p class="recommend-item-price">￥148</p>
@@ -111,10 +113,15 @@ $this->Html->script('pages/dashboard', array('inline' => false));
     </div>
 
     <div class="row">
-        <h4 class="headline">保有銘柄一覧</h4>
-        <div>
+        <h4 class="headline"><a href="/asset">保有銘柄一覧</a></h4>
+        <div class="col-sm-6">
             <div id="capital_holdings" style="width:100%; height:400px;"></div>
         </div>
-
+        <div class="col-sm-6">
+            <table class="table">
+                <?php echo $this->Html->tableHeaders(array('銘柄名', '所有株数', '前日比')) . PHP_EOL; ?>
+                <?php echo $this->Html->tableCells($asset_list) . PHP_EOL; ?>
+            </table>
+        </div>
     </div>
 </div>

@@ -54,7 +54,7 @@ $this->Html->script('base.js', array('inline' => false));
                     <a href="#" id="toggle-sidebar" class=""><i class="fa fa-bars sidebar-button" aria-hidden="true"></i></a>
                 <?php } ?>
                 <div class="center">
-                    <a class="navbar-brand brand" href="/">OSUSHI</a>
+                    <a class="navbar-brand brand" href="/dashboard">OSUSHI</a>
                 </div>
             </div>
         </header>

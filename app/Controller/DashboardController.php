@@ -9,11 +9,6 @@ class DashboardController extends AppController {
     public function index() {
         $this->set('page_title','ダッシュボード');
         $Asset = ClassRegistry::init('Asset');
-        $assets = $Asset->find('all',
-                       array(
-                               'fields' => Array('id', 'policynum','num','userid')
-                       ));
-
         $joins = array(
            array(
                 'type' => 'inner',
@@ -28,41 +23,46 @@ class DashboardController extends AppController {
             array(
                 'joins' => $joins,
                 'alias' => 'Asset',
-                'fields' => Array('Issuelist.name','Issuelist.businesstype','Issuelist.compareyd','Issuelist.stockprice','Asset.num')
+                'fields' => Array('Issuelist.name','Issuelist.businesstype','Issuelist.compareyd','Issuelist.stockprice','Asset.num'),
+                'order' => array('Asset.num DESC')
         ));
-        // $joins = array(
-        //     array(
-        //         'type' => 'inner',
-        //         'table' => 'stocks',
-        //         'alias' => 'Stock',
-        //         'conditions' => array(
-        //                 'Asset.policynum = Stock.policynum'
-        //         ),
-        //     ),
-        // );
-        // $tours = $Asset->find('all',
-        //     array(
-        //         'joins' => $joins,
-        //         'alias' => 'Asset',
-        //         'fields' => Array('Asset.id', 'Asset.policynum', 'Asset.num', 'Stock.name'),
-        //         'conditions' => array(
-        //                 'and' => array(
-        //                         array('Asset.userid' => 1)
-        //                 )
-        //         )
-        //     ));
 
-        $series_data = array();
+        $series_data  = array();
+        $asset_list   = array();
+        $asset_other  = array('その他', 0, '-');
+        $series_other = array('name' => 'その他', 'drilldown' => 'その他', 'y' => 0);
+        $drilldown_other = array();
 
-        foreach ($assets as &$value) {
-            array_push($series_data, array(
-                'name' => $value['Issuelist']['name'],
-                'drilldown' => $value['Issuelist']['name'],
-                'y'    => intval($value['Asset']['num'])
-            ));
+        for ($i=0; $i < count($assets); $i++) {
+            $_asset_list = array();
+            array_push($_asset_list, $assets[$i]['Issuelist']['name']);
+            array_push($_asset_list, $assets[$i]['Asset']['num']);
+            if ($i >= 5) {
+                $asset_other[1] += floatval($assets[$i]['Asset']['num']);
+                $series_other['y'] += floatval($assets[$i]['Asset']['num']);
+                array_push($drilldown_other, array($assets[$i]['Issuelist']['name'], floatval($assets[$i]['Asset']['num'])));
+            } else {
+                if (floatval($assets[$i]['Issuelist']['compareyd']) <= -0.1) {
+                    array_push($_asset_list, array($assets[$i]['Issuelist']['compareyd'], array('class' => 'text-blue')));
+                } elseif (floatval($assets[$i]['Issuelist']['compareyd']) >= 0.1) {
+                    array_push($_asset_list, array($assets[$i]['Issuelist']['compareyd'], array('class' => 'text-red')));
+                } else {
+                    array_push($_asset_list, $assets[$i]['Issuelist']['compareyd']);
+                }
+                array_push($asset_list,  $_asset_list);
+
+                array_push($series_data, array(
+                    'name' => $assets[$i]['Issuelist']['name'],
+                    'drilldown' => $assets[$i]['Issuelist']['name'],
+                    'y'    => floatval($assets[$i]['Asset']['num'])
+                ));
+            }
         }
+        array_push($asset_list, $asset_other);
+        array_push($series_data, $series_other);
 
         $this->set('assets', $assets);
+        $this->set('asset_list', $asset_list);
         $this->set('capital_holdings',
             json_encode(array(
                 'title' => '',
@@ -96,16 +96,14 @@ class DashboardController extends AppController {
                 )),
                 'drilldown' => array(
                     'series' => array(array(
-                        'name' => "Microsoft Internet Explorer",
-                        'id' => "Microsoft Internet Explorer",
-                        'data' => array(
-                            array("v11.0", 24.13),
-                            array("v8.0", 17.2),
-                            array("v9.0", 8.11),
-                            array("v10.0", 5.33),
-                            array("v6.0", 1.06),
-                            array("v7.0", 0.5)
-                        )
+                        'name' => "その他",
+                        'id' => "その他",
+                        'data' => $drilldown_other
+                        // 'data' => array(
+                        //     array("v10.0", 5.33),
+                        //     array("v6.0", 1.06),
+                        //     array("v7.0", 0.5)
+                        // )
                     )))
         )));
     }
