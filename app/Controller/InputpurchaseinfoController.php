@@ -7,7 +7,7 @@ class InputpurchaseinfoController extends AppController {
     public $components = array('DebugKit.Toolbar');
 
     public function index() {
-        $this->autoRender = true;
+        $this->autoRender = false;
 
         //-JSONデータの受信処理---------------------------------------------------//
         $json = file_get_contents("php://input");
