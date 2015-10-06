@@ -9,11 +9,6 @@ class DashboardController extends AppController {
     public function index() {
         $this->set('page_title','ダッシュボード');
         $Asset = ClassRegistry::init('Asset');
-        $assets = $Asset->find('all',
-                       array(
-                               'fields' => Array('id', 'policynum','num','userid')
-                       ));
-
         $joins = array(
            array(
                 'type' => 'inner',
@@ -38,6 +33,14 @@ class DashboardController extends AppController {
             $_asset_list = array();
             array_push($_asset_list, $value['Issuelist']['name']);
             array_push($_asset_list, $value['Asset']['num']);
+            if (preg_match('/^-/', $value['Issuelist']['compareyd'])) {
+                array_push($_asset_list, array($value['Issuelist']['compareyd'], array('class' => 'text-blue')));
+            } elseif (preg_match('/^\+/', $value['Issuelist']['compareyd'])) {
+                array_push($_asset_list, array($value['Issuelist']['compareyd'], array('class' => 'text-red')));
+            } else {
+                array_push($_asset_list, $value['Issuelist']['compareyd']);
+            }
+
             array_push($asset_list,  $_asset_list);
 
             array_push($series_data, array(
@@ -47,7 +50,6 @@ class DashboardController extends AppController {
             ));
         }
 
-        var_dump($series_data);
         $this->set('assets', $assets);
         $this->set('asset_list', $asset_list);
         $this->set('capital_holdings',
