@@ -15,7 +15,7 @@ class PointController extends AppController {
 
         $paied = $this->request->data['payment'];
 
-        $API_Token = "APT-aee866fc-59ef-42a3-9429-9694573c1263";
+        $API_Token = "APT-02ef7c27-2e4f-4305-b73f-a731daa30c04";
 
         //ユーザ情報のテーブルからwallet_idを取得
         $User = ClassRegistry::init('User');
