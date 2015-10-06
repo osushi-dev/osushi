@@ -24,7 +24,7 @@ class AssetController extends AppController {
             array(
                 'joins' => $joins,
                 'alias' => 'Asset',
-                'fields' => Array('Issuelist.name','Issuelist.businesstype','Issuelist.compareyd','Issuelist.stockprice','Asset.num')
+                'fields' => Array('Issuelist.name','Issuelist.businesstype','Issuelist.compareyd','Issuelist.stockprice','Asset.num','Issuelist.policynum')
         ));
         $total = 0;
         $company_num = 0;
@@ -54,10 +54,11 @@ class AssetController extends AppController {
 						} elseif (floatval($HoldingsList['Issuelist']['compareyd']) >= 0.1) {
 							array_push($_asset_list, array($HoldingsList['Issuelist']['compareyd'], array('class' => 'text-red')));
 						} else {
-							array_push($_asset_list, $HoldingsList['Issuelist']['compareyd']);
+							array_push($_asset_list, array($HoldingsList['Issuelist']['compareyd'], array('class' => '')));
 						}
 						array_push($_asset_list, '<a class="btn btn-sm btn-primary">売る</a>');
-						array_push($asset_list,  $_asset_list);
+                        array_push($_asset_list, $HoldingsList['Issuelist']['policynum']);
+                        array_push($asset_list,  $_asset_list);
 				}
 				$this->set('asset_list', $asset_list);
     }
