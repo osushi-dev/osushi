@@ -63,6 +63,38 @@ class DashboardController extends AppController {
 
         $this->set('assets', $assets);
         $this->set('asset_list', $asset_list);
+
+				/* 優待情報 */
+        $Compinfos = ClassRegistry::init('Compinfos');
+        $joins = array(
+           array(
+                'type' => 'inner',
+                'table' => 'issuelist',
+                'alias' => 'Issuelist',
+                'conditions' => array(
+                        'Issuelist.policynum = Compinfos.policynum',
+                        'Issuelist.policynum = 2502'
+                ),
+            ),
+						array(
+								'type' => 'inner',
+								'table' => 'items',
+								'alias' => 'Items',
+								'conditions' => array(
+												'Compinfos.flagshipid = Items.id'
+								),
+						)
+        );
+        $compinfos = $Compinfos->find('all',
+            array(
+                'joins' => $joins,
+                'alias' => 'Compinfos',
+                'fields' => Array('Issuelist.name','Issuelist.stockprice','Compinfos.unitshares','Compinfos.flagshipprice','Compinfos.interestrate','Items.name')
+        ));
+
+        $this->set('compinfos', $compinfos);
+
+
         $this->set('capital_holdings',
             json_encode(array(
                 'title' => '',
