@@ -57,12 +57,14 @@ $this->Html->script('pages/dashboard', array('inline' => false));
         </div>
     </div>
 
-    <div class="row">
-        <h4 class="headline">もうすぐ優待！</h4>
-        <div class="bonus">
+    <div class="row" style="overflow:hidden;">
+        <h4 class="headline">もうすぐ１株！</h4>
+        <div class="bonus col-sm-4">
             <p>
                 <?php echo $compinfos['0']['Issuelist']['name'] ?><br>
-								<span class="attention">あと<?php echo $compinfos['0']['Items']['name'] ?> <?php echo ceil((1.0 - $compinfos['0']['Assets']['num']) * $compinfos['0']['Issuelist']['stockprice'] / ($compinfos['0']['Compinfos']['flagshipprice'] * $compinfos['0']['Compinfos']['interestrate'])) ?>ケースで1株</span>
+								<span class="attention">
+								<?php echo $compinfos['0']['Items']['name'] ?><br>
+								あと<?php echo ceil((1.0 - $compinfos['0']['Assets']['num']) * $compinfos['0']['Issuelist']['stockprice'] / ($compinfos['0']['Compinfos']['flagshipprice'] * $compinfos['0']['Compinfos']['interestrate'])) ?>ケースで1株</span>
             </p>
             <div class="bonus-meter">
 						<?php for($i=1; $i<=10; $i++) { ?>
@@ -73,10 +75,12 @@ $this->Html->script('pages/dashboard', array('inline' => false));
 						?>
             </div>
         </div>
-        <div class="bonus">
+        <div class="bonus col-sm-4">
             <p>
                 <?php echo $compinfos['0']['Issuelist']['name'] ?><br>
-								<span class="attention">あと<?php echo $compinfos['0']['Items']['name'] ?> <?php echo ceil((1.0 - $compinfos['0']['Assets']['num']) * $compinfos['0']['Issuelist']['stockprice'] / ($compinfos['0']['Compinfos']['flagshipprice'] * $compinfos['0']['Compinfos']['interestrate'])) ?>ケースで1株</span>
+								<span class="attention">
+								<?php echo $compinfos['0']['Items']['name'] ?><br>
+								あと<?php echo ceil((1.0 - $compinfos['0']['Assets']['num']) * $compinfos['0']['Issuelist']['stockprice'] / ($compinfos['0']['Compinfos']['flagshipprice'] * $compinfos['0']['Compinfos']['interestrate'])) ?>ケースで1株</span>
             </p>
             <div class="bonus-meter">
 						<?php for($i=1; $i<=10; $i++) { ?>
@@ -87,10 +91,12 @@ $this->Html->script('pages/dashboard', array('inline' => false));
 						?>
             </div>
         </div>
-        <div class="bonus">
+        <div class="bonus col-sm-4">
             <p>
                 <?php echo $compinfos['0']['Issuelist']['name'] ?><br>
-								<span class="attention">あと<?php echo $compinfos['0']['Items']['name'] ?> <?php echo ceil((1.0 - $compinfos['0']['Assets']['num']) * $compinfos['0']['Issuelist']['stockprice'] / ($compinfos['0']['Compinfos']['flagshipprice'] * $compinfos['0']['Compinfos']['interestrate'])) ?>ケースで1株</span>
+								<span class="attention">
+								<?php echo $compinfos['0']['Items']['name'] ?><br>
+								あと<?php echo ceil((1.0 - $compinfos['0']['Assets']['num']) * $compinfos['0']['Issuelist']['stockprice'] / ($compinfos['0']['Compinfos']['flagshipprice'] * $compinfos['0']['Compinfos']['interestrate'])) ?>ケースで1株</span>
             </p>
             <div class="bonus-meter">
 						<?php for($i=1; $i<=10; $i++) { ?>
