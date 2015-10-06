@@ -33,11 +33,25 @@ class AssetController extends AppController {
             $total += $asset['Asset']['num'] * $asset['Issuelist']['stockprice'];
             $company_num += 1;
         }
+				$total_asset = array(
+						'total' => $total,
+						'numofcomp' => $company_num
+				);
 
         $this->set('assets',$assets);
-        $this->set('total',$total);
-        $this->set('company_num',$company_num);
+				$this->set('total_asset', $total_asset);
 
+				$asset_list  = array();
 
+				foreach ( $assets as $HoldingsList ){
+						$_asset_list = array();
+						array_push($_asset_list, $HoldingsList['Issuelist']['name']);
+						array_push($_asset_list, $HoldingsList['Issuelist']['businesstype']);
+						array_push($_asset_list, $HoldingsList['Asset']['num']);
+						array_push($_asset_list, $HoldingsList['Issuelist']['stockprice']);
+						array_push($_asset_list, $HoldingsList['Issuelist']['compareyd']);
+						array_push($asset_list,  $_asset_list);
+				}
+				$this->set('asset_list', $asset_list);
     }
 }
