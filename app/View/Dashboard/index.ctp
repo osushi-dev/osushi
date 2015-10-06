@@ -117,11 +117,4 @@ $this->Html->script('pages/dashboard', array('inline' => false));
         </div>
 
     </div>
-
-    <div class="container" style="text-align:center;">
-        <a class="btn btn-lg btn-primary btn-raised" href="../history/">
-            購入履歴
-        </a>
-    </div>
-
 </div>
