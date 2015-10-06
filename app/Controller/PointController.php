@@ -15,8 +15,7 @@ class PointController extends AppController {
 
         $paied = $this->request->data['payment'];
 
-        //APIトークンを取得する
-        $API_Token = "APT-ee4e1d8c-a5b1-4d86-8f27-2d603d0bfec2";
+        $API_Token = "APT-aee866fc-59ef-42a3-9429-9694573c1263";
 
         //ユーザ情報のテーブルからwallet_idを取得
         $User = ClassRegistry::init('User');
@@ -49,6 +48,9 @@ class PointController extends AppController {
         ));
         $contents = file_get_contents($ponq_url, false, stream_context_create($options));
 
+        $data = json_decode($contents,true);
+
+        $this->set('status','SUCCESS');
         $this->set('contents',$contents);
         $this->set('paied',$paied);
     }

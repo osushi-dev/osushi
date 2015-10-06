@@ -31,4 +31,22 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+
+    public function getAPI_Token(){
+        //預金APIを実行
+        $ponq_url = 'http://api.cashless.life/v1/token/api';
+        $headers = array(
+            'Content-Type: application/x-www-form-urlencoded',
+            'X-Cashless-API-ID: API-c634554f-a19d-42ae-bc89-600ac162a009',
+            'X-Cashless-API-Key: APK-542e6b8d-6ce9-4624-bbfa-a7575f2cbb83'
+        );
+        $options = array('http' => array(
+            'method' => 'POST',
+            'header' => implode("\r\n", $headers)
+        ));
+        $contents = file_get_contents($ponq_url, false, stream_context_create($options));
+        $data = json_decode($contents,true);
+
+        return $data['api-token'];
+    }
 }
