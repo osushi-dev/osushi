@@ -84,7 +84,7 @@ $this->Html->script('base.js', array('inline' => false));
             </div>
             <br>
             <div class="list-group">
-                <a href="#" class="list-group-item close-sidebar">
+                <a href="/dashboard" class="list-group-item close-sidebar">
                     <h4 class="list-group-item-heading"><i class="fa fa-tachometer"></i>トップ画面</h4>
                 </a>
                 <a href="#" class="list-group-item close-sidebar">
@@ -93,11 +93,18 @@ $this->Html->script('base.js', array('inline' => false));
                 <a href="#" class="list-group-item close-sidebar">
                     <h4 class="list-group-item-heading"><i class="fa fa-exclamation"></i> もうすぐ優待！</h4>
                 </a>
-                <a href="#" class="list-group-item close-sidebar">
+                <a href="/asset" class="list-group-item close-sidebar">
                     <h4 class="list-group-item-heading"><i class="fa fa-bar-chart"></i> 保有銘柄一覧</h4>
                 </a>
-                <a href="#" class="list-group-item close-sidebar">
+                <a href="/purchaseinfo" class="list-group-item close-sidebar">
                     <h4 class="list-group-item-heading"><i class="fa fa-history"></i> 購入履歴</h4>
+                </a>
+                <hr>
+                <a href="/market" class="list-group-item close-sidebar">
+                    <h4 class="list-group-item-heading"><i class="fa fa-cart-plus"></i> 端株取引</h4>
+                </a>
+                 <a href="/point/payment" class="list-group-item close-sidebar">
+                    <h4 class="list-group-item-heading"><i class="fa fa-jpy"></i> OSUSHIポイント購入</h4>
                 </a>
                 <hr>
                 <a href="#" class="list-group-item close-sidebar">
