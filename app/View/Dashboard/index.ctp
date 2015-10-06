@@ -18,7 +18,7 @@ $this->Html->script('pages/dashboard', array('inline' => false));
     });
 </script>
 
-<div class="mt-20 container dashboard">
+<div class="mt-20 container main-component">
     <div class="row">
         <h4 class="headline">あなたにオススメ！</h4>
         <div class="mb-10 carousel">
@@ -113,7 +113,7 @@ $this->Html->script('pages/dashboard', array('inline' => false));
     </div>
 
     <div class="row">
-        <h4 class="headline">保有銘柄一覧</h4>
+        <h4 class="headline"><a href="/asset">保有銘柄一覧</a></h4>
         <div class="col-sm-6">
             <div id="capital_holdings" style="width:100%; height:400px;"></div>
         </div>

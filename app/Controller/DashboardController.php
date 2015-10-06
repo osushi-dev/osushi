@@ -23,32 +23,43 @@ class DashboardController extends AppController {
             array(
                 'joins' => $joins,
                 'alias' => 'Asset',
-                'fields' => Array('Issuelist.name','Issuelist.businesstype','Issuelist.compareyd','Issuelist.stockprice','Asset.num')
+                'fields' => Array('Issuelist.name','Issuelist.businesstype','Issuelist.compareyd','Issuelist.stockprice','Asset.num'),
+                'order' => array('Asset.num DESC')
         ));
 
-        $series_data = array();
-        $asset_list  = array();
+        $series_data  = array();
+        $asset_list   = array();
+        $asset_other  = array('その他', 0, '-');
+        $series_other = array('name' => 'その他', 'drilldown' => 'その他', 'y' => 0);
+        $drilldown_other = array();
 
-        foreach ($assets as &$value) {
+        for ($i=0; $i < count($assets); $i++) {
             $_asset_list = array();
-            array_push($_asset_list, $value['Issuelist']['name']);
-            array_push($_asset_list, $value['Asset']['num']);
-            if (preg_match('/^-/', $value['Issuelist']['compareyd'])) {
-                array_push($_asset_list, array($value['Issuelist']['compareyd'], array('class' => 'text-blue')));
-            } elseif (preg_match('/^\+/', $value['Issuelist']['compareyd'])) {
-                array_push($_asset_list, array($value['Issuelist']['compareyd'], array('class' => 'text-red')));
+            array_push($_asset_list, $assets[$i]['Issuelist']['name']);
+            array_push($_asset_list, $assets[$i]['Asset']['num']);
+            if ($i >= 5) {
+                $asset_other[1] += floatval($assets[$i]['Asset']['num']);
+                $series_other['y'] += floatval($assets[$i]['Asset']['num']);
+                array_push($drilldown_other, array($assets[$i]['Issuelist']['name'], floatval($assets[$i]['Asset']['num'])));
             } else {
-                array_push($_asset_list, $value['Issuelist']['compareyd']);
+                if (floatval($assets[$i]['Issuelist']['compareyd']) <= -0.1) {
+                    array_push($_asset_list, array($assets[$i]['Issuelist']['compareyd'], array('class' => 'text-blue')));
+                } elseif (floatval($assets[$i]['Issuelist']['compareyd']) >= 0.1) {
+                    array_push($_asset_list, array($assets[$i]['Issuelist']['compareyd'], array('class' => 'text-red')));
+                } else {
+                    array_push($_asset_list, $assets[$i]['Issuelist']['compareyd']);
+                }
+                array_push($asset_list,  $_asset_list);
+
+                array_push($series_data, array(
+                    'name' => $assets[$i]['Issuelist']['name'],
+                    'drilldown' => $assets[$i]['Issuelist']['name'],
+                    'y'    => floatval($assets[$i]['Asset']['num'])
+                ));
             }
-
-            array_push($asset_list,  $_asset_list);
-
-            array_push($series_data, array(
-                'name' => $value['Issuelist']['name'],
-                'drilldown' => $value['Issuelist']['name'],
-                'y'    => floatval($value['Asset']['num'])
-            ));
         }
+        array_push($asset_list, $asset_other);
+        array_push($series_data, $series_other);
 
         $this->set('assets', $assets);
         $this->set('asset_list', $asset_list);
@@ -85,16 +96,14 @@ class DashboardController extends AppController {
                 )),
                 'drilldown' => array(
                     'series' => array(array(
-                        'name' => "不二家",
-                        'id' => "不二家",
-                        'data' => array(
-                            array("v11.0", 24.13),
-                            array("v8.0", 17.2),
-                            array("v9.0", 8.11),
-                            array("v10.0", 5.33),
-                            array("v6.0", 1.06),
-                            array("v7.0", 0.5)
-                        )
+                        'name' => "その他",
+                        'id' => "その他",
+                        'data' => $drilldown_other
+                        // 'data' => array(
+                        //     array("v10.0", 5.33),
+                        //     array("v6.0", 1.06),
+                        //     array("v7.0", 0.5)
+                        // )
                     )))
         )));
     }
