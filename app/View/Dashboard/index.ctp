@@ -7,9 +7,6 @@ $this->Html->css('pages/dashboard', array('inline' => false));
 $this->Html->script('slick.min', array('inline' => false));
 $this->Html->script('components/slick', array('inline' => false));
 $this->Html->script('pages/dashboard', array('inline' => false));
-// $this->Html->script('//code.highcharts.com/highcharts.js', array('inline' => false));
-// $this->Html->script('//code.highcharts.com/modules/data.js', array('inline' => false));
-// $this->Html->script('//code.highcharts.com/modules/drilldown.js', array('inline' => false));
 ?>
 
 <script type="text/javascript" src="//code.highcharts.com/highcharts.js"></script>
@@ -64,55 +61,58 @@ $this->Html->script('pages/dashboard', array('inline' => false));
             <p>
                 アサヒ飲料: <span class="attention">あとアサヒスーパードライ3ケースで優待！</span>
             </p>
-            <i class="fa fa-beer active"></i>
-            <i class="fa fa-beer active"></i>
-            <i class="fa fa-beer active"></i>
-            <i class="fa fa-beer active"></i>
-            <i class="fa fa-beer active"></i>
-            <i class="fa fa-beer active"></i>
-            <i class="fa fa-beer active"></i>
-            <i class="fa fa-beer"></i>
-            <i class="fa fa-beer"></i>
-            <i class="fa fa-beer"></i>
+            <div class="bonus-meter">
+                <i class="fa fa-beer active"></i>
+                <i class="fa fa-beer active"></i>
+                <i class="fa fa-beer active"></i>
+                <i class="fa fa-beer active"></i>
+                <i class="fa fa-beer active"></i>
+                <i class="fa fa-beer active"></i>
+                <i class="fa fa-beer active"></i>
+                <i class="fa fa-beer"></i>
+                <i class="fa fa-beer"></i>
+                <i class="fa fa-beer"></i>
+            </div>
         </div>
         <div class="bonus">
             <p>
                 アサヒ飲料: <span class="attention">あとアサヒスーパードライ3ケースで優待！</span>
             </p>
-            <i class="fa fa-beer active"></i>
-            <i class="fa fa-beer active"></i>
-            <i class="fa fa-beer active"></i>
-            <i class="fa fa-beer active"></i>
-            <i class="fa fa-beer active"></i>
-            <i class="fa fa-beer active"></i>
-            <i class="fa fa-beer active"></i>
-            <i class="fa fa-beer"></i>
-            <i class="fa fa-beer"></i>
-            <i class="fa fa-beer"></i>
+            <div class="bonus-meter">
+                <i class="fa fa-beer active"></i>
+                <i class="fa fa-beer active"></i>
+                <i class="fa fa-beer active"></i>
+                <i class="fa fa-beer active"></i>
+                <i class="fa fa-beer active"></i>
+                <i class="fa fa-beer active"></i>
+                <i class="fa fa-beer active"></i>
+                <i class="fa fa-beer"></i>
+                <i class="fa fa-beer"></i>
+                <i class="fa fa-beer"></i>
+            </div>
         </div>
         <div class="bonus">
             <p>
                 アサヒ飲料: <span class="attention">あとアサヒスーパードライ4ケースで優待！</span>
             </p>
-            <i class="fa fa-beer active"></i>
-            <i class="fa fa-beer active"></i>
-            <i class="fa fa-beer active"></i>
-            <i class="fa fa-beer active"></i>
-            <i class="fa fa-beer active"></i>
-            <i class="fa fa-beer active"></i>
-            <i class="fa fa-beer"></i>
-            <i class="fa fa-beer"></i>
-            <i class="fa fa-beer"></i>
-            <i class="fa fa-beer"></i>
+            <div class="bonus-meter">
+                <i class="fa fa-beer active"></i>
+                <i class="fa fa-beer active"></i>
+                <i class="fa fa-beer active"></i>
+                <i class="fa fa-beer active"></i>
+                <i class="fa fa-beer active"></i>
+                <i class="fa fa-beer active"></i>
+                <i class="fa fa-beer"></i>
+                <i class="fa fa-beer"></i>
+                <i class="fa fa-beer"></i>
+                <i class="fa fa-beer"></i>
+            </div>
         </div>
     </div>
 
     <div class="row">
         <h4 class="headline">保有銘柄一覧</h4>
         <div>
-            <p>
-                アサヒ飲料: <span class="attention">あとアサヒスーパードライ3ケースで優待！</span>
-            </p>
             <div id="capital_holdings" style="width:100%; height:400px;"></div>
         </div>
 

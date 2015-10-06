@@ -39,9 +39,12 @@
     bottom: 0px;
 }
 .bonus {
+    text-align: center;
     margin-bottom: 30px;
 }
-.bonus .fa {
+.bonus-meter {
+    text-align: center;
+    font-size: 30px;
     color: gray;
 }
 .bonus .active {
