@@ -167,6 +167,7 @@ class InputpurchaseinfoController extends AppController {
                                         )
                                 )
      	);
+	$addstocknum = 0;
 	if($assetnum > 0){
 	                //echo "update";
 	                //Asset情報取得
@@ -207,6 +208,18 @@ class InputpurchaseinfoController extends AppController {
 	                );
         }
 /////////////
+            $Purchaseinfos->save(
+                 array(
+                     'Purchaseinfos' => array(
+                         'userid' => $jdata['Items'][$i]['userid'],
+                         'jancode' => $jdata['Items'][$i]['jancode'],
+                         'price' => $jdata['Items'][$i]['price'],
+                         'num' => $jdata['Items'][$i]['num'],
+			 'shares' => $addstocknum,
+                         'date' => $date->format('Y-m-d H:i:s')
+                     )
+                 )
+             );
         }
     }
 
