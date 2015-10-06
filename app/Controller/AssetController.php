@@ -56,6 +56,7 @@ class AssetController extends AppController {
 						} else {
 							array_push($_asset_list, $HoldingsList['Issuelist']['compareyd']);
 						}
+						array_push($_asset_list, '<a class="btn btn-sm btn-primary">売る</a>');
 						array_push($asset_list,  $_asset_list);
 				}
 				$this->set('asset_list', $asset_list);
