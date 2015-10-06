@@ -40,6 +40,10 @@ $this->Html->script('base.js', array('inline' => false));
             echo $this->fetch('meta');
             echo $this->fetch('css');
         ?>
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/js/bootstrap.min.js"></script>
     </head>
 
     <body>
@@ -105,10 +109,6 @@ $this->Html->script('base.js', array('inline' => false));
             </div>
         </div>
         <?php } ?>
-        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="/js/bootstrap.min.js"></script>
         <?php echo $this->fetch('script');?>
     </body>
 </html>

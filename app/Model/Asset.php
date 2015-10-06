@@ -2,6 +2,6 @@
 
 App::uses('Model', 'Model');
 
-class Assets extends Model {
+class Asset extends Model {
 
 }
