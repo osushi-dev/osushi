@@ -6,11 +6,11 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>date</th>
-                        <th>item.name</th>
-                        <th>stock.name</th>
-                        <th>price</th>
-                        <th>num</th>
+                        <th>購入日</th>
+                        <th>商品名</th>
+                        <th>銘柄</th>
+                        <th>値段</th>
+                        <th>個数</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -18,7 +18,7 @@
                     <tr>
                         <td><?php echo $purchaseinfos[$i]['Purchaseinfo']['date'] ?></td>
                         <td><?php echo $purchaseinfos[$i]['Item']['name'] ?></td>
-                        <td><?php echo $purchaseinfos[$i]['Stock']['name'] ?></td>
+                        <td><?php echo $purchaseinfos[$i]['Issuelist']['name'] ?></td>
                         <td><?php echo $purchaseinfos[$i]['Purchaseinfo']['price'] ?></td>
                         <td><?php echo $purchaseinfos[$i]['Purchaseinfo']['num'] ?></td>
                     </tr>
@@ -26,6 +26,5 @@
                 </tbody>
             </table>
         </div>
-       <p>説明だお</p>
     </div>
 </div>
