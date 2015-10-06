@@ -38,3 +38,12 @@
 .recommend-item-price {
     bottom: 0px;
 }
+.bonus {
+    margin-bottom: 30px;
+}
+.bonus .fa {
+    color: gray;
+}
+.bonus .active {
+    color: red;
+}
