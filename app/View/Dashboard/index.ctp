@@ -61,7 +61,7 @@ $this->Html->script('pages/dashboard', array('inline' => false));
         <h4 class="headline">もうすぐ優待！</h4>
         <div class="bonus">
             <p>
-                アサヒ飲料: <span class="attention">あとアサヒスーパードライ3ケースで優待！</span>
+                アサヒ飲料: <span class="attention">あと<?php echo $compinfos['0']['Items']['name'] ?> <?php echo ceil(($compinfos['0']['Compinfos']['unitshares'] - 99.5) * $compinfos['0']['Issuelist']['stockprice'] / ($compinfos['0']['Compinfos']['flagshipprice'] * $compinfos['0']['Compinfos']['interestrate'])) ?>ケースで優待！</span>
             </p>
             <div class="bonus-meter">
                 <i class="fa fa-beer active"></i>
