@@ -37,7 +37,8 @@ class PurchaseinfoController extends AppController {
             array(
                 'joins' => $joins,
                 'alias' => 'Purchaseinfo',
-                'fields' => Array('Purchaseinfo.id', 'Purchaseinfo.jancode', 'Purchaseinfo.price', 'Purchaseinfo.num', 'Purchaseinfo.date', 'Issuelist.name','Item.name'),
+                'fields' => Array('Purchaseinfo.id', 'Purchaseinfo.jancode', 'Purchaseinfo.price', 'Purchaseinfo.num', 'Purchaseinfo.date', 'Issuelist.name','Item.name', 'Purchaseinfo.shares'),
+                'order' => array('Purchaseinfo.date' => 'desc')
         ));
 
         $this->set('purchaseinfos',$purchaseinfos);

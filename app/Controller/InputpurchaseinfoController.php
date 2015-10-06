@@ -50,7 +50,7 @@ class InputpurchaseinfoController extends AppController {
 	$pninfo = $Items->find('all',
 				array(
 					'joins' => $joins,
-					'alias' => 'Items',	
+					'alias' => 'Items',
 					//'conditions' => array('jancode'=> $data['Items'][$i]['jancode'])
 					'conditions' => array('Items.jancode'=>'4901085167380'),
 					'fields' => array('Items.policynum','Issuelist.lastclose')
@@ -65,7 +65,7 @@ class InputpurchaseinfoController extends AppController {
 				array(
 					'conditions' => array(
 						'userid' => '1',
-						//'userid' => $data['Items'][$i]['userid'], 
+						//'userid' => $data['Items'][$i]['userid'],
 						'policynum' => $pninfo[0]['Items']['policynum']
 					)
 				)
@@ -78,7 +78,7 @@ class InputpurchaseinfoController extends AppController {
 			array(
 				'conditions' => array(
 					'userid' => '1',
-                                       	//'userid' => $data['Items'][$i]['userid'], 
+                                       	//'userid' => $data['Items'][$i]['userid'],
                                    	'policynum' => $pninfo[0]['Items']['policynum']
 				)
 			)
@@ -93,11 +93,11 @@ class InputpurchaseinfoController extends AppController {
 		//更新
 		$data= array(
 			'id' => $assetinfo[0]['Asset']['id'],
-			'num' => $newstocknum 
+			'num' => $newstocknum
 			);
 		$fields = array('num');
 		$Asset->save( $data, false, $fields );
-		
+
 
 	}else{
 		//echo "insert";
@@ -120,7 +120,7 @@ class InputpurchaseinfoController extends AppController {
         for($i = 0; $i < $jdata['NumOfItems']; $i++){
             if($i > 0){
                 $Purchaseinfos->create();
-         	$Asset->create();   
+         	$Asset->create();
 		$Items->create();
 	    }
             $Purchaseinfos->save(
@@ -149,7 +149,7 @@ class InputpurchaseinfoController extends AppController {
         $pninfo = $Items->find('all',
                                 array(
                                         'joins' => $joins,
-                                        'alias' => 'Items',     
+                                        'alias' => 'Items',
                                         'conditions' => array('Items.jancode'=> $jdata['Items'][$i]['jancode']),
                                         //'conditions' => array('Items.jancode'=>'4901085167380'),
                                         'fields' => array('Items.policynum','Issuelist.lastclose')
@@ -162,7 +162,7 @@ class InputpurchaseinfoController extends AppController {
                                 array(
                                         'conditions' => array(
                                                 'userid' => '1',
-                                                //'userid' => $data['Items'][$i]['userid'], 
+                                                //'userid' => $data['Items'][$i]['userid'],
                                                 'policynum' => $pninfo[0]['Items']['policynum']
                                         )
                                 )
@@ -174,7 +174,7 @@ class InputpurchaseinfoController extends AppController {
 		                        array(
 		                                'conditions' => array(
 		                                        'userid' => '1',
-		                                        //'userid' => $data['Items'][$i]['userid'], 
+		                                        //'userid' => $data['Items'][$i]['userid'],
 		                                        'policynum' => $pninfo[0]['Items']['policynum']
 		                                )
 		                        )
@@ -187,7 +187,7 @@ class InputpurchaseinfoController extends AppController {
 	                //更新
 	                $data= array(
 	                        'id' => $assetinfo[0]['Asset']['id'],
-	                        'num' => $newstocknum 
+	                        'num' => $newstocknum
  	       		);
 		      	$fields = array('num');
 		  	$Asset->save( $data, false, $fields );
