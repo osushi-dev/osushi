@@ -49,7 +49,13 @@ class AssetController extends AppController {
 						array_push($_asset_list, $HoldingsList['Issuelist']['businesstype']);
 						array_push($_asset_list, $HoldingsList['Asset']['num']);
 						array_push($_asset_list, $HoldingsList['Issuelist']['stockprice']);
-						array_push($_asset_list, $HoldingsList['Issuelist']['compareyd']);
+						if (floatval($HoldingsList['Issuelist']['compareyd']) <= -0.1) {
+							array_push($_asset_list, array($HoldingsList['Issuelist']['compareyd'], array('class' => 'text-blue')));
+						} elseif (floatval($HoldingsList['Issuelist']['compareyd']) >= 0.1) {
+							array_push($_asset_list, array($HoldingsList['Issuelist']['compareyd'], array('class' => 'text-red')));
+						} else {
+							array_push($_asset_list, $HoldingsList['Issuelist']['compareyd']);
+						}
 						array_push($asset_list,  $_asset_list);
 				}
 				$this->set('asset_list', $asset_list);
