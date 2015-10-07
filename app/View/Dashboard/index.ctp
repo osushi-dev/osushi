@@ -59,7 +59,28 @@ $this->Html->script('pages/dashboard', array('inline' => false));
 
     <div class="row" style="overflow:hidden;">
         <h4 class="headline">もうすぐ１株！</h4>
-        <div class="bonus col-sm-4">
+				<?php
+					$count = 0;
+					if( $compinfos['0']['Assets']['num'] < 1.0  ) $count++;
+					if( $compinfos['1']['Assets']['num'] < 1.0  ) $count++;
+					if( $compinfos['2']['Assets']['num'] < 1.0  ) $count++;
+					switch($count){
+						case 1:
+							$colsep = 12;	
+							break;
+						case 2:
+							$colsep = 6;	
+							break;
+						case 3:
+							$colsep = 4;	
+							break;
+						default:
+							$colsep = 4;	
+							break;
+					}
+					if( $compinfos['0']['Assets']['num'] < 1.0  ){
+				?>
+        <div class="bonus col-sm-<?php echo $colsep ?>">
             <p>
                 <?php echo $compinfos['0']['Issuelist']['name'] ?><br>
 								<span class="attention">
@@ -75,7 +96,11 @@ $this->Html->script('pages/dashboard', array('inline' => false));
 						?>
             </div>
         </div>
-        <div class="bonus col-sm-4">
+				<?php
+					}
+					if( $compinfos['1']['Assets']['num'] < 1.0  ){
+				?>
+        <div class="bonus col-sm-<?php echo $colsep ?>">
             <p>
                 <?php echo $compinfos['1']['Issuelist']['name'] ?><br>
 								<span class="attention">
@@ -91,7 +116,11 @@ $this->Html->script('pages/dashboard', array('inline' => false));
 						?>
             </div>
         </div>
-        <div class="bonus col-sm-4">
+				<?php
+					}
+					if( $compinfos['2']['Assets']['num'] < 1.0  ){
+				?>
+        <div class="bonus col-sm-<?php echo $colsep ?>">
             <p>
                 <?php echo $compinfos['2']['Issuelist']['name'] ?><br>
 								<span class="attention">
@@ -107,6 +136,7 @@ $this->Html->script('pages/dashboard', array('inline' => false));
 						?>
             </div>
         </div>
+				<?php } ?>
     </div>
 
     <div class="row">
