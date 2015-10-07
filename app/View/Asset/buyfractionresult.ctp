@@ -36,6 +36,11 @@ $this->Html->script('components/slick', array('inline' => false));
                     <td>売却端株数</td>
                     <td><?php echo $this->request->data['buynum']?></td>
                 </tr>
+                <tr>
+                    <td>取得ポイント数</td>
+                    <td><?php echo $this->request->data['buynum']*$this->request->data['stockprice'] ?> pt</td>
+                </tr>
+ 
             </tbody>
         </table>
 

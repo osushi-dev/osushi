@@ -22,7 +22,7 @@ $this->Html->css('pages/aset', array('inline' => false));
 							<?php echo $asset_list[$i][0]?>
 						</h4>
                         <div class="list-group-item-text">
-							<h4>株数 <?php echo round($asset_list[$i][2],2)?></h4>
+							<h4>株数 <?php echo round($asset_list[$i][2],4)?></h4>
 							<div align="right">
 								<span>株価 <?php echo $asset_list[$i][3]?></span><br>
 								<h4>前日比 <span class="<?php echo $asset_list[$i][4][1]['class']?>"><?php echo $asset_list[$i][4][0]?></span></h4>
