@@ -30,7 +30,7 @@ $this->Html->css('pages/aset', array('inline' => false));
 						</div>
                     </a>
 					<div align="right">
-					<a class="btn btn-sm btn-primary"><?php echo $asset_list[$i][0]?> の端株を売る</a>
+					<a href="/asset/buy_fraction?asset_id=<?php echo $assets[$i]['Asset']['id']?>" class="btn btn-sm btn-primary"><?php echo $asset_list[$i][0]?> の端株を売る</a>
 				</div>
                 <?php } ?>
             </ul>
