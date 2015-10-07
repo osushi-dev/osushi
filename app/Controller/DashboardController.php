@@ -36,7 +36,7 @@ class DashboardController extends AppController {
         for ($i=0; $i < count($assets); $i++) {
             $_asset_list = array();
             array_push($_asset_list, $assets[$i]['Issuelist']['name']);
-            array_push($_asset_list, $assets[$i]['Asset']['num']);
+            array_push($_asset_list, number_format($assets[$i]['Asset']['num'],4));
             if ($i >= 5) {
                 $asset_other[1] += floatval($assets[$i]['Asset']['num']);
                 $series_other['y'] += floatval($assets[$i]['Asset']['num']);
@@ -58,6 +58,7 @@ class DashboardController extends AppController {
                 ));
             }
         }
+				$asset_other[1] = number_format($asset_other[1],4);
         array_push($asset_list, $asset_other);
         array_push($series_data, $series_other);
 
@@ -73,7 +74,8 @@ class DashboardController extends AppController {
                 'alias' => 'Issuelist',
                 'conditions' => array(
                         'Issuelist.policynum = Compinfos.policynum',
-                        'Issuelist.policynum = 2502'
+                        'Issuelist.policynum in (2270,2502,3880)',
+
                 ),
             ),
 						array(
@@ -97,7 +99,8 @@ class DashboardController extends AppController {
             array(
                 'joins' => $joins,
                 'alias' => 'Compinfos',
-                'fields' => Array('Issuelist.name','Issuelist.stockprice','Compinfos.unitshares','Compinfos.flagshipprice','Compinfos.interestrate','Items.name','Assets.num')
+                'fields' => Array('Issuelist.name','Issuelist.stockprice','Compinfos.unitshares','Compinfos.flagshipprice','Compinfos.interestrate','Items.name','Assets.num'),
+								'order' => array('Compinfos.id DESC')
         ));
 
         $this->set('compinfos', $compinfos);
