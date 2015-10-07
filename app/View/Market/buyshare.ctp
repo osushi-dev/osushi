@@ -34,11 +34,11 @@ $this->Html->script('components/slick', array('inline' => false));
                 </tr>
                 <tr>
                     <td>購入後端株数</td>
-                    <td><?php echo ($asset_num+$shares[0]['Fractionalshare']['num'])?></td>
+                    <td><?php echo round($asset_num+$shares[0]['Fractionalshare']['num'],4)?></td>
                 </tr>
                 <tr>
                     <td>支払いポイント</td>
-                    <td><?php echo ceil($shares[0]['Stock']['stockprice']*$shares[0]['Fractionalshare']['num'])?> pt</td>
+                    <td><?php echo ($shares[0]['Stock']['stockprice']*$shares[0]['Fractionalshare']['num'])?> pt</td>
                 </tr>
                 <tr>
                     <td>購入後ポイント残高</td>
