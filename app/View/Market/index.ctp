@@ -9,9 +9,9 @@ $this->Html->script('components/slick', array('inline' => false));
 <div class="container main-component">
     <div class="row">
         <h4 class="headline">OSUSHIポイント</h4>
-        <p align="right">
+        <h3 align="right">
             <?php echo $point?> pt
-        </p>
+        </h3>
     </div>
 
     <div class="row">
