@@ -1,3 +1,7 @@
+#top-title {
+    font-size: 40px;
+}
+
 .landing-header {
     width:100%;
     background-image:url('/img/osushi-top.jpg');
@@ -7,6 +11,14 @@
 
 .landing-header-inner {
     color: rgba(231, 76, 60, 1.0);
-    padding: 50px 0px 50px 0px;
-    background-color: rgba(247, 243, 232, 0.8);
+    padding: 170px 0px;
+    background-color: rgba(247, 243, 232, 0.9);
+    /* background-color: rgba(0,0,0, 0.7); */
 }
+
+.landing-introduction {
+    padding: 50px 0px;
+    color: white;
+    background-color: rgba(231, 76, 60, 0.9);
+}
+
