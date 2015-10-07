@@ -34,20 +34,13 @@ function payment(value){
 }
 </script>
 
-<div class="container">
-    <div class="jumbotron">
-        <h4>入金画面</h4>
-            <div class="row">
-                <button type="submit" name="payment" class="btn btn-default col-xs-6 col-xs-offset-3 mb-5" value="1000"  onClick="payment(1000)">1000ポイント</button>
-            </div>
-            <div class="row">
-                <button type="submit" name="payment" class="btn btn-default col-xs-6 col-xs-offset-3 mb-5" value="2000"  onClick="payment(2000)">2000ポイント</button>
-            </div>
-            <div class="row">
-                <button type="submit" name="payment" class="btn btn-default col-xs-6 col-xs-offset-3 mb-5" value="5000"  onClick="payment(5000)">5000ポイント</button>
-            </div>
-            <div class="row">
-                <button type="submit" name="payment" class="btn btn-default col-xs-6 col-xs-offset-3 mb-5" value="10000" onClick="payment(10000)">10000ポイント</button>
-            </div >
+<div class="container main-component">
+    <div class="row pb-20">
+        <h4 class="headline">入金画面</h4>
+        <button type="submit" name="payment" class="btn btn-default col-xs-6 col-xs-offset-3 mb-5" value="1000"  onClick="payment(1000)">1000ポイント</button>
+        <button type="submit" name="payment" class="btn btn-default col-xs-6 col-xs-offset-3 mb-5" value="2000"  onClick="payment(2000)">2000ポイント</button>
+        <button type="submit" name="payment" class="btn btn-default col-xs-6 col-xs-offset-3 mb-5" value="5000"  onClick="payment(5000)">5000ポイント</button>
+        <button type="submit" name="payment" class="btn btn-default col-xs-6 col-xs-offset-3 mb-5" value="10000" onClick="payment(10000)">10000ポイント</button>
+        </div >
     </div>
 </div>

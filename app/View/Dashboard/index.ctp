@@ -19,7 +19,7 @@ $this->Html->script('pages/dashboard', array('inline' => false));
 </script>
 
 <div class="mt-20 container main-component">
-    <div class="row">
+    <div class="row pb-20">
         <h4 class="headline">あなたにオススメ！</h4>
         <div class="mb-10 carousel">
             <div class="recommend-item" style="background-image:url('http://hp.knowledge-works.co.jp/wp-content/uploads/2012/06/Fujiya_Milky.jpg')">
