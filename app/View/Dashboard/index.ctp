@@ -64,7 +64,7 @@ $this->Html->script('pages/dashboard', array('inline' => false));
                 <?php echo $compinfos['0']['Issuelist']['name'] ?><br>
 								<span class="attention">
 								<?php echo $compinfos['0']['Items']['name'] ?><br>
-								あと<?php echo ceil((1.0 - $compinfos['0']['Assets']['num']) * $compinfos['0']['Issuelist']['stockprice'] / ($compinfos['0']['Compinfos']['flagshipprice'] * $compinfos['0']['Compinfos']['interestrate'])) ?>ケースで1株</span>
+								あと<?php echo ceil((1.0 - $compinfos['0']['Assets']['num']) * $compinfos['0']['Issuelist']['stockprice'] / ($compinfos['0']['Compinfos']['flagshipprice'] * $compinfos['0']['Compinfos']['interestrate'])) ?>パックで1株</span>
             </p>
             <div class="bonus-meter">
 						<?php for($i=1; $i<=10; $i++) { ?>
@@ -77,14 +77,14 @@ $this->Html->script('pages/dashboard', array('inline' => false));
         </div>
         <div class="bonus col-sm-4">
             <p>
-                <?php echo $compinfos['0']['Issuelist']['name'] ?><br>
+                <?php echo $compinfos['1']['Issuelist']['name'] ?><br>
 								<span class="attention">
-								<?php echo $compinfos['0']['Items']['name'] ?><br>
-								あと<?php echo ceil((1.0 - $compinfos['0']['Assets']['num']) * $compinfos['0']['Issuelist']['stockprice'] / ($compinfos['0']['Compinfos']['flagshipprice'] * $compinfos['0']['Compinfos']['interestrate'])) ?>ケースで1株</span>
+								<?php echo $compinfos['1']['Items']['name'] ?><br>
+								あと<?php echo ceil((1.0 - $compinfos['1']['Assets']['num']) * $compinfos['1']['Issuelist']['stockprice'] / ($compinfos['1']['Compinfos']['flagshipprice'] * $compinfos['1']['Compinfos']['interestrate'])) ?>ロールで1株</span>
             </p>
             <div class="bonus-meter">
 						<?php for($i=1; $i<=10; $i++) { ?>
-                <i class="fa fa-beer <?php if( $i <= intval($compinfos['0']['Assets']['num'] * 10) ) echo 'active'; ?>"></i>
+                <i class="fa fa-beer <?php if( $i <= intval($compinfos['1']['Assets']['num'] * 10) ) echo 'active'; ?>"></i>
 						<?php 
 							if( $i==5 ) echo '<br>';
 							}
@@ -93,14 +93,14 @@ $this->Html->script('pages/dashboard', array('inline' => false));
         </div>
         <div class="bonus col-sm-4">
             <p>
-                <?php echo $compinfos['0']['Issuelist']['name'] ?><br>
+                <?php echo $compinfos['2']['Issuelist']['name'] ?><br>
 								<span class="attention">
-								<?php echo $compinfos['0']['Items']['name'] ?><br>
-								あと<?php echo ceil((1.0 - $compinfos['0']['Assets']['num']) * $compinfos['0']['Issuelist']['stockprice'] / ($compinfos['0']['Compinfos']['flagshipprice'] * $compinfos['0']['Compinfos']['interestrate'])) ?>ケースで1株</span>
+								<?php echo $compinfos['2']['Items']['name'] ?><br>
+								あと<?php echo ceil((1.0 - $compinfos['2']['Assets']['num']) * $compinfos['2']['Issuelist']['stockprice'] / ($compinfos['2']['Compinfos']['flagshipprice'] * $compinfos['2']['Compinfos']['interestrate'])) ?>缶で1株</span>
             </p>
             <div class="bonus-meter">
 						<?php for($i=1; $i<=10; $i++) { ?>
-                <i class="fa fa-beer <?php if( $i <= intval($compinfos['0']['Assets']['num'] * 10) ) echo 'active'; ?>"></i>
+                <i class="fa fa-beer <?php if( $i <= intval($compinfos['2']['Assets']['num'] * 10) ) echo 'active'; ?>"></i>
 						<?php 
 							if( $i==5 ) echo '<br>';
 							}
