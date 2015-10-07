@@ -181,7 +181,7 @@ class InputpurchaseinfoController extends AppController {
 		    	);
 	                //追加分を算出
 	                //$addstocknum = 1000/$pninfo[0]['Issuelist']['lastclose'];
-	                $addstocknum = $jdata['Items'][$i]['price']*$jdata['Items'][$i]['num']/$pninfo[0]['Issuelist']['lastclose'];
+	                $addstocknum = 0.01*$jdata['Items'][$i]['price']*$jdata['Items'][$i]['num']/$pninfo[0]['Issuelist']['lastclose'];
 	                $newstocknum = $addstocknum + $assetinfo[0]['Asset']['num'];
 	                //Var_dump($assetinfo[0]['Asset']['id']);
 	                //更新
@@ -194,7 +194,7 @@ class InputpurchaseinfoController extends AppController {
 	}else{
 	                //echo "insert";
 	                //$addstocknum = 1000/$pninfo[0]['Issuelist']['lastclose'];
-	                $addstocknum = $jdata['Items'][$i]['price']*$jdata['Items'][$i]['num']/$pninfo[0]['Issuelist']['lastclose'];
+	                $addstocknum = 0.01*$jdata['Items'][$i]['price']*$jdata['Items'][$i]['num']/$pninfo[0]['Issuelist']['lastclose'];
 	                $Asset->save(
 	                        array(
 	                                'Asset' => array(
