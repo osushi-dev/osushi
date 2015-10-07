@@ -24,7 +24,7 @@
                 <div align="right">
                     <span>¥ <?php echo $purchaseinfos[$i]['Purchaseinfo']['price'] ?> ,</span>
                     <span><?php echo $purchaseinfos[$i]['Purchaseinfo']['num'] ?> ヶ</span>
-                    <h4>取得端株 <?php echo round($purchaseinfos[$i]['Purchaseinfo']['shares'],2) ?></h4>
+                    <h4>取得端株 <?php echo round($purchaseinfos[$i]['Purchaseinfo']['shares'],4) ?></h4>
                 </div>
             </div>
         </div>
