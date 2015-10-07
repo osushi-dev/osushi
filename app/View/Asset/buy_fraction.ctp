@@ -5,7 +5,18 @@ $this->Html->css('pages/market', array('inline' => false));
 $this->Html->script('slick.min', array('inline' => false));
 $this->Html->script('components/slick', array('inline' => false));
 ?>
-
+<script type="text/javascript">
+console.log('a');
+$(function () {
+    $("form").bind('keyup', function(){
+        if ((Number($('#max_stock').html()) >= Number($('#buying_assets').val())) && (Number($('#buying_assets').val()) >= 0.0001)) {
+            $('#submit_button').removeAttr("disabled");
+        } else {
+            $('#submit_button').attr("disabled", "disabled");
+        }
+    });
+});
+</script>
 <div class="container">
 
     <div class="jumbotron">
@@ -31,15 +42,15 @@ $this->Html->script('components/slick', array('inline' => false));
                 </tr>
                 <tr>
                     <td>保有端株数</td>
-                    <td><?php echo $assets[0]['Asset']['num']?></td>
+                    <td id="max_stock"><?php echo $assets[0]['Asset']['num']?></td>
                 </tr>
                 <tr>
                     <td>売却端株数</td>
-                    <td><input type="text" name="buynum" value="<?php echo $assets[0]['Asset']['num']?>"></td>
+                    <td><input id="buying_assets" type="text" name="buynum" value="<?php echo $assets[0]['Asset']['num']?>"></td>
                 </tr>
                  <tr>
                     <td>株価</td>
-                    <td><?php echo $assets[0]['Issuelist']['stockprice']?> 円</td>
+                    <td><?php echo $assets[0]['Issuelist']['stockprice']?> 円 / 株</td>
                 </tr>
  
             </tbody>
@@ -57,9 +68,10 @@ $this->Html->script('components/slick', array('inline' => false));
                     <input type="hidden" name="policynum" value="<?php echo $assets[0]['Issuelist']['policynum']?>">
                     <input type="hidden" name="buying_assets" value="<?php echo $assets[0]['Asset']['num']?>">
                     <input type="hidden" name="stockprice" value="<?php echo $assets[0]['Issuelist']['stockprice']?>">
-                    <input type="submit" class="btn btn-danger" style="width:100%;" value="売却する">
+                    <input id="submit_button" type="submit" class="btn btn-danger" style="width:100%;" value="売却する">
                 </form>
             </div>
         </div>
     </div>
 </div>
+
